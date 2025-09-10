@@ -7,13 +7,31 @@
   <style>
     .header {
   width: 300px;
-  margin: 0 auto; /* top/bottom = 0, left/right = auto */
+  margin: 0 auto;
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.grid-item {
+  background: lightblue;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
 }
   </style>
 </head>
 <body>
 <div class="header">
   <h1>StuyStudy</h1>
+  <div class="grid-container">
+  <div class="grid-item">Something</div>
+  <div class="grid-item">Something</div>
+</div>
 </div>
 </body>
 </html>
