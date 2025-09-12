@@ -7,7 +7,7 @@ html {
 }
 
 body {
-    background-image: linear-gradient(135deg, lightblue, cyan);
+    background-image: linear-gradient(135deg, red, blue);
 }
 
 * {
@@ -50,24 +50,16 @@ body {
 }
 
 .grid-container {
-    margin: 0px 5rem;
+    margin: 0px 1rem;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
 }
 
-@media only screen and (max-width: 800px) {
-    .grid-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        margin: 0px 4rem;
-    }
-}
-
 .grid-item {
     background: #808080;
     height: 30rem;
-    width: 20rem;
+    width: 21rem;
     display: flex;
     flex-direction: column;
     border-radius: 4px;
@@ -76,6 +68,29 @@ body {
     align-items: flex-start;
     /* smooth out changes */
 }
+
+@media only screen and (max-width: 1080px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        
+    }
+
+    .grid-item {
+        background: #808080;
+        height: 30rem;
+        width: 19.6rem;
+        display: flex;
+        flex-direction: column;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        align-items: flex-start;
+        /* smooth out changes */
+    }
+}
+
+
 
 .grid-item:hover {
     transform: scale(1.05);
@@ -98,7 +113,8 @@ body {
     font-size: 20px;
     line-height: 1.1;
     max-width: 20rem;
-    word-wrap: break-word;  /* ensure long words wrap */
+    word-wrap: break-word;
+    /* ensure long words wrap */
     overflow-wrap: anywhere;
 }
 
@@ -108,4 +124,12 @@ body {
     margin: 1rem 2.5rem;
     font-size: 40px;
     text-align: center;
+}
+
+.separator {
+  border: none;             /* remove default styling */
+  height: 2px;              /* thickness */
+  background-color: black;  /* color */
+  width: 100vw;             /* full viewport width */
+  margin: 0;                /* remove default spacing */
 }
