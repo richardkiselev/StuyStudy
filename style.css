@@ -50,69 +50,80 @@ body {
 }
 
 .grid-container {
-    margin: 0px 1rem;
+    margin: 0px 0rem;
+    padding: 0px 6rem;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    max-width: fit-content;
     gap: 20px;
 }
 
 .grid-item {
-    background: #808080;
-    height: 30rem;
-    width: 21rem;
-    display: flex;
-    flex-direction: column;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    align-items: flex-start;
-    /* smooth out changes */
+  height: 30rem;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  text-decoration: none;
+  align-items: flex-start;
+
+  /* Gradient base */
+  background: gray; 
+  background-size: 300% 100%;  /* make gradient wider */
+  background-position: 0% 0%; /* start position */
+  background-repeat: repeat;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* keeps gradient inside rounded corners */
 }
+
+/* Keyframes for marquee */
+@keyframes slide-gradient {
+  from   { background-position: 0% 0; }
+  to   { background-position: 100% 0; }
+}
+
+/* On hover, animate gradient instead of replacing it */
+.grid-item:hover {
+  transform: scale(0.95);
+  background-image: linear-gradient(90deg, blue, red, blue);
+  box-shadow: 0 44px 44px rgba(0, 0, 0, 0.87);
+  animation: slide-gradient 1.5s ease-in-out infinite;
+}
+
 
 @media only screen and (max-width: 1080px) {
     .grid-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        
+        padding-left: 2.5rem;
+        padding-right: 0rem;
     }
 
     .grid-item {
-        background: #808080;
-        height: 30rem;
-        width: 19.6rem;
-        display: flex;
-        flex-direction: column;
-        border-radius: 4px;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        align-items: flex-start;
-        /* smooth out changes */
+        width: 91vw;
     }
 }
 
 
 
-.grid-item:hover {
-    transform: scale(1.05);
-    background: #a8a8a8;
-    /* slightly bigger */
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-}
-
 .item-header {
-    color: white;
+    color: transparent;
+    background: linear-gradient(135deg, #ff6b6b, #f7d794, #1dd1a1);
+    background-clip: text;
+    -webkit-background-clip: text;
     padding-top: 8px;
     padding-left: 10px;
     padding-bottom: 2px;
-    font-size: 33px;
+    font-size: 65px;
+    
 }
 
 .item-desc {
     color: lightgray;
     padding: 4px 10px;
-    font-size: 20px;
+    font-size: 27px;
     line-height: 1.1;
-    max-width: 20rem;
+    margin-left: 4px;
+    max-width: 95%;
     word-wrap: break-word;
     /* ensure long words wrap */
     overflow-wrap: anywhere;
@@ -127,9 +138,14 @@ body {
 }
 
 .separator {
-  border: none;             /* remove default styling */
-  height: 2px;              /* thickness */
-  background-color: black;  /* color */
-  width: 100vw;             /* full viewport width */
-  margin: 0;                /* remove default spacing */
+    border: none;
+    /* remove default styling */
+    height: 2px;
+    /* thickness */
+    background-color: black;
+    /* color */
+    width: 100vw;
+    /* full viewport width */
+    margin: 0;
+    /* remove default spacing */
 }
