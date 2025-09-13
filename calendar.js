@@ -11,6 +11,14 @@ const frees = {
     "10": ["2;10;13;20", "Yom Kippur", "PSAT/NMSQT (11th graders only)", "Italian Heritage and Indigenous Peoples' Day", "Diwali"],
     "11": ["4;11;27;28", "Election Day", "Veterans Day", "Thanksgiving", "Thanksgiving"],
     "12": ["24;25;26;27;28;29;30;31", "Winter Break"],
+    "1": ["1;2;19;26", "Winter Recess", "Winter Recess", "Rev. Dr. Martin Luther King Jr. Day", "Professional Development Day"],
+    "2": ["16;17;18;19;20", "Midwinter  Recess"],
+    "3": ["20", "Eid al-Fitr"],
+    "4": ["2;3;6;7;8;9;10", "Spring Recess"],
+    "5": ["25;27", "Memorial Day", "Eid al-Adha"],
+    "6": ["4;19;26;27;28;29;30", "Anniversary Day/Staff Development", "Juneteenth", "Last Day Of School", "No School","No School","No School","No School"],
+    "7": ["All", "Summer Break"],
+    "8": ["All", "Summer Break"],
 };
 function renderCalendar(date) {
     calendarGrid.innerHTML = '';
@@ -52,7 +60,13 @@ function renderCalendar(date) {
             });
         }
 
-        let isHoliday = freeDays.includes(String(day));
+        let isHoliday = false;
+        if (freeDays[0] == "All") {
+            isHoliday = true;
+            holidayName = freeNames[0];
+        } else {
+            freeDays.includes(String(day));
+        }
 
         const notWork = (isHoliday ? true : (((daz.getDate() <= 3) && (daz.getMonth() == 8)) || (daz.getDay() == 0 || daz.getDay() == 6)));
         console.log(notWork, isHoliday, 'for', daz.toString());
