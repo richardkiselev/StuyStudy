@@ -30,10 +30,37 @@ body {
     white-space: nowrap;
 }
 
+.header {
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 3rem;
+    background: linear-gradient(90deg, red, green);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-align: center;
+}
+
+a {
+    display: inline-block; 
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    margin: 1rem 2.5rem;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    background-color: #333;
+}
+
 /* Calendar Container */
 .calendar {
     width: 95%;
-    height: 90%;
+    height: 80%;
     margin: 3rem auto;
     border: 2px solid #333;
     border-radius: 8px;
