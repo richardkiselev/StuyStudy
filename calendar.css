@@ -42,7 +42,7 @@ body {
 }
 
 a {
-    display: inline-block; 
+    display: inline-block;
     border-radius: 8px;
     background-color: black;
     color: white;
@@ -68,7 +68,8 @@ a:hover {
     border: 2px solid #333;
     border-radius: 8px;
     padding: 10px;
-    background: rgba(255, 255, 255, 0.3); /* subtle overlay to see gradient bg */
+    background: rgba(255, 255, 255, 0.3);
+    /* subtle overlay to see gradient bg */
 }
 
 /* Calendar Header Buttons */
@@ -142,10 +143,19 @@ a:hover {
     background: rgba(255, 255, 255, 0.3);
 }
 
-/* Responsive adjustments */
 @media only screen and (max-width: 1080px) {
+    .calendar-grid .day {
+        width: 2.4rem;
+        font-size: 0.8rem;
+    }
+
+    .calendar-grid .holiday-text {
+        font-size: 0.54rem;
+        margin: -2px;
+    }
+
     #month-year {
-        font-size: 2.4rem;
+        font-size: 2rem;
     }
 
     .calendar {
