@@ -65,7 +65,7 @@ function renderCalendar(date) {
             isHoliday = true;
             holidayName = freeNames[0];
         } else {
-            freeDays.includes(String(day));
+            isHoliday = freeDays.includes(String(day));
         }
 
         const notWork = (isHoliday ? true : (((daz.getDate() <= 3) && (daz.getMonth() == 8)) || (daz.getDay() == 0 || daz.getDay() == 6)));
