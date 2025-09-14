@@ -8,7 +8,7 @@ let currentDate = new Date();
 const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const frees = {
     "9": ["23;24", "Rosh Hashanah", "Rosh Hashanah"],
-    "10": ["2;10;13;20", "Yom Kippur", "PSAT/NMSQT (11th graders only)", "Italian Heritage and Indigenous Peoples' Day", "Diwali"],
+    "10": ["2;10;13;20", "Yom Kippur", "PSAT/NMSQT", "Italian Heritage and Indigenous Peoples' Day", "Diwali"],
     "11": ["4;11;27;28", "Election Day", "Veterans Day", "Thanksgiving", "Thanksgiving"],
     "12": ["24;25;26;27;28;29;30;31", "Winter Break"],
     "1": ["1;2;19;26", "Winter Recess", "Winter Recess", "Rev. Dr. Martin Luther King Jr. Day", "Professional Development Day"],
@@ -16,7 +16,7 @@ const frees = {
     "3": ["20", "Eid al-Fitr"],
     "4": ["2;3;6;7;8;9;10", "Spring Recess"],
     "5": ["25;27", "Memorial Day", "Eid al-Adha"],
-    "6": ["4;19;26;27;28;29;30", "Anniversary Day/Staff Development", "Juneteenth", "Last Day Of School", "No School","No School","No School","No School"],
+    "6": ["4;19;26;27;28;29;30", "Anniversary Day/Staff Development", "Juneteenth", "Last Day Of School", "No School", "No School", "No School", "No School"],
     "7": ["All", "Summer Break"],
     "8": ["All", "Summer Break"],
 };
@@ -61,17 +61,20 @@ function renderCalendar(date) {
         }
 
         let isHoliday = false;
+        let specialHoliday = false;
         if (freeDays[0] == "All") {
             isHoliday = true;
             holidayName = freeNames[0];
         } else {
             isHoliday = freeDays.includes(String(day));
         }
+        if (daz.getMonth() + 1 == 10 && daz.getDate() == 10) {
+            specialHoliday = true;
+        }
 
         const notWork = (isHoliday ? true : (((daz.getDate() <= 3) && (daz.getMonth() == 8)) || (daz.getDay() == 0 || daz.getDay() == 6)));
-        console.log(notWork, isHoliday, 'for', daz.toString());
         dayCell.className = `day${(isHoliday ? ' holiday' : '')}`;
-        dayCell.innerHTML = `<span>${String(day)}</span>` + (notWork === true ? "" : `<span>${dayType}-Day</span>`) + (isHoliday === true ? `<span class="holiday-text">${holidayName} (No School)</span>` : "");
+        dayCell.innerHTML = `<span>${String(day)}</span>` + (specialHoliday ? `<span class="special-text">11th graders ONLY</span>` : "") + (notWork === true ? "" : `<span>${dayType}-Day</span>`) + (isHoliday === true ? `<span class="holiday-text">${holidayName} (No School)</span>` : "");
         calendarGrid.appendChild(dayCell);
         if (notWork !== true) {
             if (dayType == "A") dayType = "B";

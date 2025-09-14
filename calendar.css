@@ -154,6 +154,12 @@ a:hover {
         margin: -2px;
     }
 
+    .calendar-grid .special-text {
+        font-size: 0.5rem;
+        width:55px;
+        margin:-6px;
+    }
+
     #month-year {
         font-size: 2rem;
     }
