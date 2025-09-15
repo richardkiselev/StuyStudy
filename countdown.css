@@ -46,6 +46,22 @@ h2 {
     margin-bottom: 0.4rem;
 }
 
+a {
+    display: inline-block;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    margin: 1rem 2.5rem;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    background-color: #dddddd;
+    color: black;
+}
 @media only screen and (max-width: 600px) {
     .date {
         font-size: 15px;
