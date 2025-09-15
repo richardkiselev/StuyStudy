@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+    font-family: "Geist", 'Times New Roman', Times, serif;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-image: linear-gradient(135deg, orange, cyan);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    color: transparent;
+    background: linear-gradient(90deg, yellow, yellow, yellow, green, green, blue, blue);
+    -webkit-background-clip: text;
+    background-clip: text;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    font-size: 3rem;
+}
+
+.date {
+    color: transparent;
+    background: linear-gradient(90deg, blue, red);
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin: 1rem;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    margin-bottom: 0.4rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .date {
+        font-size: 15px;
+        margin: 0rem;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .date {
+        font-size: 2rem;
+        margin-top: 0.3rem;
+        margin-bottom: 0rem;
+    }
+}

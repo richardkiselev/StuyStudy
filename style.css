@@ -29,19 +29,7 @@ body {
     /* just to see the area */
 }
 
-@media only screen and (max-width: 500px) {
-    .head {
-        font-size: 4.4rem;
-        padding: 1rem;
-        max-width: 400px;
-        /* adjust as needed */
-        border: 2px solid black;
-        display: inline-block;
-        /* or block */
-        background: lightblue;
-        /* just to see the area */
-    }
-}
+
 
 .header {
     width: 100%;
@@ -60,7 +48,7 @@ body {
 
 .grid-item {
   height: 30rem;
-  width: 90vw;
+  width: 82vw;
   display: flex;
   flex-direction: column;
   border-radius: 4px;
@@ -92,16 +80,7 @@ body {
 }
 
 
-@media only screen and (max-width: 1080px) {
-    .grid-container {
-        padding-left: 2.5rem;
-        padding-right: 0rem;
-    }
 
-    .grid-item {
-        width: 91vw;
-    }
-}
 
 
 
@@ -148,4 +127,35 @@ body {
     /* full viewport width */
     margin: 0;
     /* remove default spacing */
+}
+
+@media only screen and (max-width: 500px) {
+    .grid-container {
+        padding-left: 2.5rem;
+        padding-right: 0rem;
+    }
+
+    .grid-item {
+        width: 91vw;
+    }
+
+    .head {
+        font-size: 4.4rem;
+        padding: 1rem;
+        max-width: 400px;
+        /* adjust as needed */
+        border: 2px solid black;
+        display: inline-block;
+        /* or block */
+        background: lightblue;
+        /* just to see the area */
+    }
+    .grid-item {
+        max-width: 23rem;
+        max-height: 10rem;
+    }
+
+    .grid-item .item-header {
+        font-size: 45px;
+    }
 }
