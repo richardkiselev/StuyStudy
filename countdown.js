@@ -52,7 +52,7 @@ for (const month in frees) {
 
 
 allDates.sort((a, b) => Math.abs(a - today) - Math.abs(b - today));
-importantDates["No School"] = allDates[0];
+importantDates["Next Break"] = allDates[0];
 
 let closestDate = allDates[0];
 let minDiff = Math.abs(today - closestDate);
